@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f6fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 420px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 2em 2em 1em 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #2d3436;
+        }
+        label {
+            display: block;
+            margin: 1em 0 0.5em 0;
+            color: #636e72;
+        }
+        input, select {
+            width: 100%;
+            padding: 0.7em;
+            border-radius: 5px;
+            border: 1px solid #dfe6e9;
+            font-size: 1em;
+        }
+        button {
+            width: 100%;
+            padding: 0.8em;
+            background: #0984e3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            margin-top: 1.3em;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #74b9ff;
+        }
+        .success {
+            color: green;
+            text-align: center;
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Ticket Booking Form</h2>
+    <form id="bookingForm">
+        <label for="name">Name*</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email*</label>
+        <input type="email" id="email" required>
+
+        <label for="event">Event*</label>
+        <select id="event" required>
+            <option value="">-- Select Event --</option>
+            <option value="Concert">Concert</option>
+            <option value="Theater">Theater</option>
+            <option value="Movie">Movie</option>
+        </select>
+
+        <label for="quantity">Number of Tickets*</label>
+        <input type="number" id="quantity" min="1" max="10" required>
+
+        <button type="submit">Book Ticket</button>
+        <div class="success" id="successMsg"></div>
+    </form>
+</div>
+<script>
+    document.getElementById("bookingForm").onsubmit = function(event) {
+        event.preventDefault();
+        // Simple success message (for real apps, add backend integration)
+        document.getElementById("successMsg").textContent = "Your ticket has been booked successfully!";
+        document.getElementById("bookingForm").reset();
+    }
+</script>
+</body>
+</html>
