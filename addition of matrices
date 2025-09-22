@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+#define ROWS 3
+#define COLS 3
+
+int main() {
+    int matrix1[ROWS][COLS], matrix2[ROWS][COLS], sum[ROWS][COLS];
+    int i, j;
+
+    printf("Enter elements of first %dx%d matrix:\n", ROWS, COLS);
+    for(i = 0; i < ROWS; i++) {
+        for(j = 0; j < COLS; j++) {
+            printf("Element [%d][%d]: ", i+1, j+1);
+            scanf("%d", &matrix1[i][j]);
+        }
+    }
+
+    printf("\nEnter elements of second %dx%d matrix:\n", ROWS, COLS);
+    for(i = 0; i < ROWS; i++) {
+        for(j = 0; j < COLS; j++) {
+           
